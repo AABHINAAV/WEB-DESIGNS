@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgb(65, 38, 65);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            height: 500px;
+            width: 500px;
+            border-radius: 50%;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 0 10px #ddd, inset 0 0 30px #bbb, 0 0 30px #bbb, 0 0 10px #aaa;
+            position: relative;
+        }
+
+        .container::before {
+            content: '';
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #aaa;
+            box-shadow: 0 0 0 10px #ddd;
+            z-index: 1;
+        }
+
+        .hour,
+        .min,
+        .sec {
+            height: 50%;
+            position: absolute;
+            top: 0;
+            transform-origin: bottom;
+        }
+
+        .hour {
+            width: 14px;
+        }
+
+        .min {
+            width: 8px;
+        }
+
+        .sec {
+            width: 4px;
+        }
+
+        .hr {
+            height: 140px;
+            width: 14px;
+            background: black;
+            position: absolute;
+            bottom: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .mn {
+            height: 180px;
+            width: 8px;
+            background: black;
+            position: absolute;
+            bottom: 20px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .sc {
+            height: 260px;
+            width: 4px;
+            bottom: -40px;
+            background: red;
+            position: absolute;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="hour">
+            <div class="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc"></div>
+        </div>
+    </div>
+    <script>
+        let hr = document.querySelector(".hour");
+        let min = document.querySelector(".min");
+        let sec = document.querySelector(".sec");
+        setInterval(() => {
+            let t = new Date;
+            hr.style.transform = `rotate(${((t.getHours()) % 12) * 30}deg)`;
+            min.style.transform = `rotate(${t.getMinutes() * 6}deg)`;
+            sec.style.transform = `rotate(${t.getSeconds() * 6}deg)`;
+        }, 1000);
+    </script>
+</body>
+
+</html>

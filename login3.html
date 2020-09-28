@@ -1,0 +1,137 @@
+<html>
+    <head>
+        <title>try</title>
+        <style>
+            @font-face {
+                font-family: "xyzfont";
+                src: url("HEADPLANE.TTF");
+            }
+            *{
+                padding:0;
+                margin:0;
+            }
+            body{
+                font-family: "xyzfont";
+                background-image:url("pic.jpg");
+                background-repeat:no-repeat;
+                background-position: center center;
+                color:white;
+                display:flex;
+                align-items:center;
+                justify-content: center;
+            }
+            .wrapper{
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                width:60%;
+                height:60vh;
+                position:relative;
+                padding:0;
+                background:inherit;
+                overflow:hidden;
+            }
+            .wrapper::before{
+                content:"";
+                position:absolute;
+                border:1px red solid;
+                top:0;
+                right:-7%;
+                left:-7%;
+                bottom:-7%;
+                background:inherit;
+                filter:blur(20px);
+            }
+            .container{
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                position:relative;
+                width:100%;
+                overflow:hidden;
+                height:100%;
+            }
+            .container div{
+                display: flex;
+                flex-direction: column;
+                position:relative;
+                height:80px;
+            }
+            .input1,.input2,.input3,.heading{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .input1{
+                margin-bottom:20px;
+            }
+            h1{
+                font-size:3.4rem;
+            }
+            input{
+                font-family:"xyzfont";
+            }
+            .lbid,.lbpwd{
+                font-size:2rem;
+                position: absolute;
+                bottom:10px;
+                color:white;
+                transition: all 0.3s ease;
+            }
+            #id,#pwd{
+                position: absolute;
+                background:none;
+                border:none;
+                outline:none;
+                border-bottom:2px white solid;
+                color:white;
+                width:100%;
+                height: 50px;
+                font-size: 30px;
+                padding:0 10px;
+                bottom:0;
+            }
+            #btn{
+                background:none;
+                border:white 2px solid;
+                border-radius:10px;
+                outline: none;
+                color:white;
+                font-size:2rem;
+                padding:10px 25px;
+                margin-top:30px;
+                transition: all 0.3s ease;
+            }
+            #btn:hover{
+                color:#73ee38;
+                border-color:#73ee38;
+                background:rgba(0,0,0,0.6);
+                box-shadow: 0 0 14px #73ee38;
+            }
+            input:focus~label,input:valid~label{
+                color:#73ee38;
+                bottom:70%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="container">
+                <div class="heading">
+                    <h1>LOG-IN</h1>
+                </div>
+                <div class="input1"> 
+                    <input type="text" id="id" required> 
+                    <label for="username" class="lbid">USERNAME</label>                
+                </div>
+                <div class="input2">                
+                    <input type="password" id="pwd" required>
+                    <label for="password" class="lbpwd">PASSWORD</label>
+                </div>
+                <div class="input3">
+                    <input type="submit" value="SUBMIT" id="btn">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

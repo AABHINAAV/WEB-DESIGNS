@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>circle menu bar</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            background:rgb(32, 31, 31);
+            display: flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .menu-holder{
+            height:300px;
+            width:300px;
+            border-radius:50%;
+            background:rgb(248, 245, 245);
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.8),
+                        -5px -5px 5px rgba(255,255,255,0.2);
+            position: relative;
+        }
+        .option{
+            height:100px;
+            width:100px;
+            border-radius: 50%;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background:rgb(248, 245, 245);
+            box-shadow: 10px 10px 30px rgba(0,0,0,1),
+                        -5px -5px 10px rgba(255,255,255,0.3);
+            z-index: -1;
+            transition:all 0.5s ease;
+        }
+        #work{
+            position: absolute;
+            height: 100%;
+            width:100%;
+            border-radius:50%;
+            border:none;
+            outline:none;
+            -webkit-appearance: none;
+        }
+        .option:hover{
+            background:rgb(245, 240, 240);
+        }
+        #work:checked ~ .option1{
+            top:20%;
+            left:-40%;
+        }
+        #work:checked ~ .option2{
+            top:-30%;
+            left:10%;
+        }
+        #work:checked ~ .option3{
+            top:-30%;
+            left:90%;
+        }
+        #work:checked ~ .option4{
+            top:20%;
+            left:130%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="menu-holder">
+            <input type="checkbox" name="" id="work">
+            <div class="option option1"></div>
+            <div class="option option2"></div>
+            <div class="option option3"></div>
+            <div class="option option4"></div>
+        </div>
+    </div>
+</body>
+</html>

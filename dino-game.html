@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" onclick='jump()'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dino-game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(251, 232, 232);
+        }
+
+        .container {
+            height: 400px;
+            width: 600px;
+            border: 1px solid grey;
+            background-color: rgb(238, 238, 238);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dino {
+            position: absolute;
+            bottom: 2px;
+            left: 2px;
+            height: 70px;
+            width: 40px;
+            background: red;
+        }
+
+        .classFordino {
+            animation: dino-anim 0.8s linear;
+        }
+
+        @keyframes dino-anim {
+            0% {
+                transform: translateY(0px);
+            }
+
+            25% {
+                transform: translateY(-90px);
+            }
+
+            60% {
+                transform: translateY(-90px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .tree {
+            position: absolute;
+            bottom: 2px;
+            right: 0;
+            height: 40px;
+            width: 40px;
+            background: blue;
+            animation: tree-anim 2s linear infinite;
+        }
+
+        @keyframes tree-anim {
+            0% {
+                transform: translateX(0px);
+            }
+
+            100% {
+                transform: translateX(-640px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dino"></div>
+        <div class="tree"></div>
+    </div>
+    <script>
+        var dino = document.querySelector('.dino');
+        var tree = document.querySelector('.tree');
+        var cont = document.querySelector('.container');
+        function jump() {
+            if (!dino.classList.contains('classFordino')) {
+                dino.classList.add('classFordino');
+                let x = setInterval(function () {
+                    dino.classList.remove('classFordino');
+                    clearInterval(x);
+                }, 800);
+            }
+        }
+        var check = setInterval(function () {
+            var dinoBottom = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
+            var treeLeft = parseInt(window.getComputedStyle(tree).getPropertyValue('left'));
+            if (treeLeft > 0 && treeLeft < 42 && dinoBottom < 286) {
+                dino.style.animation = 'none';
+                alert('u lose');
+            }
+        }, 10);
+        console.log("dino bottom : " + parseInt(window.getComputedStyle(dino).getPropertyValue('bottom')));
+        console.log("dino left : " + parseInt(window.getComputedStyle(dino).getPropertyValue('left')));
+        console.log("tree bottom : " + parseInt(window.getComputedStyle(tree).getPropertyValue('bottom')));
+        console.log("tree left : " + parseInt(window.getComputedStyle(tree).getPropertyValue('left')));
+    </script>
+</body>
+
+</html>

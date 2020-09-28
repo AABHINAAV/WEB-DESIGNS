@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                background:linear-gradient(45deg,#7efff5,#ff3838,#7d5fff,#ff9f1a);
+            }
+            .container
+            {
+                position: absolute;;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                width:600px;
+                height:400px;    
+                background:rgba(0,0,0,0.4);
+                box-sizing:border-box;
+                border-radius:4px;
+                overflow:hidden;
+            }
+            h1
+            {
+                margin-bottom:25px;
+                text-align:center;
+                color:white;
+            }
+            .input
+            {
+                position:relative;
+                width:100%;
+                height:100px;
+            }
+            .id,.pwd
+            {
+                position:absolute;
+                border:none;
+                border-bottom:2px white solid;
+                outline:none;
+                background:none;
+                height:60px;
+                width:100%;
+                top:10px;
+                color:white;
+                font-size:20px;
+                transition: all 0.3s linear;
+            }
+            span
+            {
+                position:absolute;
+                left:0;
+                height:2px;
+                background-color:#73ee38;
+                bottom:30px;
+                width:0%;
+                transition: all 1s linear;
+            }
+            label
+            {
+                color:white;
+                font-size:23px;
+                position:absolute;
+                top:30px;
+                transition: all 0.3s linear;
+            }
+            .btn
+            {
+                position:absolute;
+                left:50%;
+                bottom:10%;
+                transform:translate(-50%,-50%);
+                background:none;
+                border:2px solid white;
+                border-radius:3px;
+                outline:none;
+                cursor: pointer;
+                font-size:20px;
+                color:white;
+                font-weight:600px;
+                letter-spacing: 4px;
+                padding: 10px;
+                box-sizing: border-box;
+                transition: all 0.3s linear;
+            }
+            .id:focus ~ label,
+            .pwd:focus ~ label,
+            .id:valid ~ label,
+            .pwd:valid ~ label
+            {
+                top:-7px;
+                color:#73ee38;
+            }
+            .id:focus ~ span,
+            .pwd:focus ~ span,
+            .id:valid ~ span,
+            .pwd:valid ~ span
+            {
+                width:100%;
+            }
+            .btn:hover
+            {
+                background:rgba(0,0,0,0.4);
+            }            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>LOG-IN</h1>
+            <div class="input">
+                <input type="text" class="id" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="input">
+                <input type="password" class="pwd" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <input type="submit" value="SUBMIT" class="btn">
+        </div>
+    </body>
+</html>

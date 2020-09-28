@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                margin:0;
+                padding:0;
+                background:rgb(20, 19, 109);
+            }
+            div
+            {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+            button
+            {
+                display: block;
+                background:none;
+                border:none;
+                border-radius:20px;
+                font-size:20px;
+                color:white;
+                font-weight: bolder;
+                font-family:"arial";
+                padding:16px 43px;
+                margin: 30px 0px;
+                position:relative;
+                overflow:hidden;
+            }
+            button::before
+            {
+                content:"";
+                background-color:rgb(212, 119, 134);
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                z-index:-1;
+                transition: all 0.5s ease;
+            }
+            .btn1::before
+            {
+                width:0%;
+                height:100%;
+            }
+            .btn1:hover::before
+            {
+                width:100%;
+            }
+
+            .btn2::before
+            {
+                width:100%;
+                height:0%;
+            }
+            .btn2:hover::before
+            {
+                height:100%;
+            }
+
+            .btn3::before
+            {
+                width:100%;
+                height:0%;
+                transform:translate(-50%,-50%) rotate(45deg) ;
+            }
+            .btn3:hover::before
+            {
+                height:400%;
+            }
+
+            .btn4::before
+            {
+                width:100%;
+                height:0%;
+                transform:translate(-50%,-50%) rotate(-45deg);
+            }
+            .btn4:hover::before
+            {
+                height:400%;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <button class="btn1">HOVER BUTTON 1</button>
+            <button class="btn2">HOVER BUTTON 2</button>
+            <button class="btn3">HOVER BUTTON 3</button>
+            <button class="btn4">HOVER BUTTON 4</button>
+        </div>
+    </body>
+</html>

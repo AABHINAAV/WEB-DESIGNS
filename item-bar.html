@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <title>try</title>
+        <style>
+            *{
+                padding:0;
+                margin:0;
+            }
+            body{
+                display: flex;
+                align-items: center;
+                background-color: rgb(233, 221, 206);
+                justify-content: center;
+                transform-style: preserve-3d;
+            }
+            .outer-div{
+                height:70px;
+                width:280px;
+                display:flex;                
+                background-color: rgb(78, 14, 161);
+                overflow: hidden;
+                border-radius:50px;
+                box-shadow:0 0 10px rgb(78, 14, 161);
+                /* animation:sample 0.3s 1; */
+            }
+            .container{
+                display:grid;
+                grid-template-columns:280px;
+                grid-template-rows: repeat(4,70px);
+                position: relative;
+                transform: rotate(0deg);
+                transform-origin: 36px 36px;
+                transition:all 0.4s ease-out; 
+            }
+            #plus,#phone,#video,#msg{
+                -webkit-appearance: none;
+                height:60px;
+                width:60px;
+                border-radius:50%;
+                border:none;
+                outline:none;
+                background:white;
+                position: relative;
+            }
+
+            #plus{
+                left:66px;
+                z-index:1;
+            }
+            #plus:checked{
+                animation:sample1 0.3s 1;
+            }
+            @keyframes sample1{
+                0%{
+                    transform:rotate(0deg);
+                    transform-origin: left;
+                }
+                50%{
+                    transform:rotate(-10deg);
+                    transform-origin:left;
+                }
+                100%{
+                    transform:rotate(0deg);
+                    transform-origin: left;
+                }
+            }
+            #plus::after{
+                content:'+';
+                position:absolute;
+                height:100%;
+                width:100%;
+                color:rgb(78, 14, 161);
+                font-size:3rem;
+                transition:all 0.4s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #plus:checked::after{
+                transform:rotate(225deg);
+            }
+
+            #phone,#video,#msg{
+                left:6px;
+                top:4px;
+                background:rgba(156, 121, 238,0.7);
+                color:white;
+                transition:all 0.2s linear;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size:2rem;
+                transform:rotate(90deg);
+            }
+            #phone:hover , #video:hover , #msg:hover{
+                background:rgb(156, 121, 238);
+                filter:brightness(150%);
+            }
+            #srch{
+                height:60px;
+                width:70%;
+                position: absolute;
+                border:none;
+                outline:none;
+                border-radius: 50px;
+                top:5px;   
+                left:78px;
+                background:rgb(156, 121, 238);
+                color:white;
+                font-size:1.5rem;
+                padding:0 16px;
+            }
+            #srch::placeholder{
+                color:white;
+            }
+            #plus:checked ~ .outer-div .container{                
+                transform: rotate(-90deg);
+                transform-origin: 36px 36px;
+            }
+
+            /* applying animation for bouncing downward on plus and outer-div by using js */
+            #plus:checked ~ .outer-div{
+                animation:sample1 0.3s 1;
+            }
+            .xyz{
+                animation:sample2 0.3s 1;
+            }
+            @keyframes sample2{
+                0%{
+                    transform:rotate(0deg);
+                    transform-origin: left;
+                }
+                50%{
+                    transform:rotate(10deg);
+                    transform-origin:left;
+                }
+                100%{
+                    transform:rotate(0deg);
+                    transform-origin: left;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <input type="checkbox" id="plus">
+        <div class="outer-div">            
+                <div class="container">            
+                    <div class="one">                
+                        <input type="text" id="srch"
+                        placeholder="Message">
+                    </div>
+                    <div id="phone">
+                        <a><ion-icon name="call-outline"></ion-icon></a>
+                    </div>
+                    <div id="video">
+                        <a><ion-icon name="videocam-outline"></ion-icon></a>
+                    </div>
+                    <div id="msg">
+                        <a><ion-icon name="mail-outline"></ion-icon>
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <script>
+            let pls=document.querySelector("#plus");
+            let cont=document.querySelector(".outer-div");
+            pls.addEventListener('click',()=>{
+                if(pls.checked==false){
+                pls.classList.add('xyz');
+                cont.classList.add('xyz');
+                }
+                else{
+                    pls.classList.remove('xyz');
+                    cont.classList.remove('xyz');
+                }
+            });
+        </script>   
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>     
+    </body>
+</html>

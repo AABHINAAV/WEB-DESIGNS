@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loading 1</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display: flex;
+            align-items:center;
+            justify-content: center;
+            background:#000;
+        }
+        .container{
+            height:16rem;
+            width:16rem;
+            position:relative;
+        }
+        .circle{
+            position:absolute;
+            top:0;
+            left:0;
+            height:50%;
+            width:50%;
+            background:yellow;
+            border-radius:100% 0 0 0;
+            transform-origin:100% 100%;
+        }
+        .circle1{
+            animation:anim 0.75s linear infinite;
+        }
+        .circle2{
+            background:red;
+            animation:anim 1.01s linear infinite;
+        }
+        .circle3{
+            background:green;
+            animation:anim 1.51s linear infinite;
+        }
+        .circle4{
+            background:pink;
+            animation:anim 3.03s linear infinite;
+        }
+        @keyframes anim {
+            0%{transform:rotate(0);}
+            100%{transform:rotate(360deg);}            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+        <div class="circle circle4"></div>
+    </div>
+</body>
+</html>

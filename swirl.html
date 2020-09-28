@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>swirl loop</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body{
+                height:100vh;
+                background:#111;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .wrapper{
+                height:200px;
+                width:200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transform:rotateZ(0deg);
+                transition:all 1.2s ease;
+            }
+            .box{
+                height:90%;
+                width:52%;
+                background:linear-gradient(19deg,#21d4fd,#b721ff);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position:relative;
+                border-radius: 0;
+                transition:all 1s ease;
+            }
+            .box::before,.box::after{
+                content:"";
+                position:absolute;
+                height:100%;
+                width:100%;
+                background:linear-gradient(19deg,#21d4fd,#b721ff);
+                border-radius: 0;
+                transition:all 1s ease;
+            }
+            .box::after{
+                transform:rotateZ(60deg);
+            }
+            .box::before{
+                transform:rotateZ(-60deg);
+            }
+            .box:hover{
+                border-radius:50px;
+            }
+            .box:hover::after{
+                border-radius:50px;
+            }
+            .box:hover::before{
+                border-radius:50px;
+            }
+            .wrapper:hover{
+                transform:rotateZ(260deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="box"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>non rectangular header</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        body{
+            width:100vw;
+            min-height:150vh;
+        }
+        section{
+            height:100vh;
+            width:100vw;
+            background:url('./city1.jpg');
+            background-size:cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            clip-path: circle(180vh at 50% -80vh);
+            display: flex;
+            align-items:center;
+            justify-content:center;
+        }
+        section h1{
+            text-transform: uppercase;
+            font-size: 2.5rem;
+            color:rgb(172, 31, 21);
+        }
+    </style>
+</head>
+<body>
+    <section>
+            <h1>non-rectangular header using css3 clip-path</h1>
+    </section>
+</body>
+</html>

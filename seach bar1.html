@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                background:rgba(109, 40, 40, 0.801);             
+            }
+            div
+            {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                height: 4rem;
+                background-color: #262326e8;
+                border-radius:50px;
+                padding:0 0.5rem;
+                width:fit-content;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+            }
+            input
+            {
+                border:none;
+                outline:none;
+                background:none;
+                color:white;
+                height:2rem;
+                width:0px;          
+                font-size:1.3rem;
+                padding:0;
+                margin:0;
+                transition: all 0.3s linear;
+            }
+            input::placeholder{
+                color:white;
+            }
+            a
+            {
+                width:3rem;
+                height:3rem;
+                color:red;
+                background-color: rgba(0, 0, 0, 0.733);
+                border-radius:50%;
+                font-size:1.7rem;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                transition:all 0.1s ease;
+            }
+            a:hover{
+                background:red;
+                color:white;
+            }
+            div:hover>input , input:focus , input:valid
+            {
+                width:200px;
+                padding:0 1rem;
+            }
+        </style>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
+    <body>
+        <div>
+            <input type="text" value="" placeholder="SEARCH BAR" required>
+            <a>
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+        </div>
+    </body>
+</html>

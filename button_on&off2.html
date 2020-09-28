@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swipe button</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            background:teal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            position:relative;
+            height:3rem;
+            width:14rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #btn{
+            appearance: none;
+            outline:none;
+            height:100%;
+            width:100%;
+            background:white;
+            border-radius:2rem;
+            transition:all 0.3s linear;
+        }
+        #btn:checked{
+            background:black;
+        }
+        #btn::after , #btn::before{
+            position:absolute;
+            font-size:1.2rem;
+            line-height: 3rem;
+            z-index: 2;
+            transition:all 0.3s linear;
+        }
+        #btn::after{
+            content:'ON';
+            color:white;
+            left:1rem;
+        }
+        #btn::before{
+            content:'OFF';
+            color:white;
+            right:1rem;
+        }
+        #btn:checked:after{
+            color:white;
+        }
+        #btn::before{
+            color:black;
+        }
+        label{
+            position:absolute;
+            top:0.5rem;
+            bottom:0.5rem;
+            left:0.5rem;
+            right:6.5rem;
+            border-radius: 1rem;
+            background:black;
+            z-index: 1;
+            transition: left 0.4s 0.2s, right 0.5s, background 0.35s;
+        }
+        #btn:checked + label{
+            left:6.5rem;
+            right:0.5rem;
+            background:white;
+            transition:left 0.5s, right 0.4s 0.2s, background 0.35s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="checkbox" name="" id="btn">
+        <label for="btn"></label>
+    </div>
+</body>
+</html>

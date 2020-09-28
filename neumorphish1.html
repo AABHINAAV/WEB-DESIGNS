@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                background:rgb(88, 83, 83);
+            }
+            .container
+            {
+                position:relative;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                border:1px white solid;
+                height: 400px;
+            }
+            .neu1
+            {
+                height:100px;
+                width:200px;
+                border-radius:50px;
+                box-shadow:3px 3px 10px black,-3px -3px 10px white;
+            }
+            .neu2
+            {
+                height:100px;
+                width:100px;
+                border-radius:10px;
+                box-shadow:inset 3px 3px 10px black,inset -3px -3px 10px white;
+            }
+            .neu3
+            {
+                height:100px;
+                width:100px;
+                border-radius:50%;
+                box-shadow:3px 3px 10px black,-3px -3px 10px white;
+                position:relative;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            .neu3::after
+            {
+                content:'';
+                height:80%;
+                width:80%;
+                border-radius:50%;
+                position:absolute;
+                box-shadow:inset 3px 3px 10px black,inset -3px -3px 10px white;
+            }
+            .neu1,.neu2,.neu3
+            {
+                margin:0px 20px;
+            }
+        </style>
+    </head>
+    </head>
+    <body>
+        <div class="container">
+            <div class="neu1"></div>
+            <div class="neu2"></div>
+            <div class="neu3"></div>
+        </div>
+    </body>
+</html>

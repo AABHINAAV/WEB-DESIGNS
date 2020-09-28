@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text background</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            background:black;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .text{
+            font-size:11.3rem;
+            font-weight: 600;
+            background-image:url('city1.jpg');
+            background-size:50% 100%;
+            color:rgba(255,255,255,0.1);
+            -webkit-background-clip:text;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">CITY LIGHTS</div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button border</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            background:#0c002b;
+        }
+        .btn{
+            height:4rem;
+            width:16rem;
+            color:#1670f0;
+            font-size:2rem;
+            text-align: center;
+            line-height: 4rem;
+            position:relative;
+            overflow: hidden;
+        }
+        .btn::before{
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            width:50%;
+            background:rgba(255,255,255,0.05);
+        }
+        .btn span:nth-child(1){
+            position:absolute;
+            top:0;
+            left:0;
+            height:2px;
+            width:100%;
+            background:linear-gradient(to right, #0c002b , #1779ff);
+            animation:line1 2s linear infinite;
+        }
+        @keyframes line1 {
+            0%{transform:translateX(-100%);}
+            100%{transform:translateX(100%);}
+        }
+        .btn span:nth-child(2){
+            position:absolute;
+            top:0;
+            right:0;
+            width:2px;
+            height:100%;
+            background:linear-gradient(to bottom, #0c002b , #1779ff);
+            animation:line2 2s linear infinite;
+            animation-delay: 1s;
+        }
+        @keyframes line2 {
+            0%{transform:translateY(-100%);}
+            100%{transform:translateY(100%);}
+        }
+        .btn span:nth-child(3){
+            position:absolute;
+            bottom:0;
+            right:0;
+            height:2px;
+            width:100%;
+            background:linear-gradient(to left, #0c002b , #1779ff);
+            animation:line3 2s linear infinite;
+        }
+        @keyframes line3 {
+            0%{transform:translateX(100%);}
+            100%{transform:translateX(-100%);}
+        }
+        .btn span:nth-child(4){
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:2px;
+            height:100%;
+            background:linear-gradient(to top, #0c002b , #1779ff);
+            animation:line4 2s linear infinite;
+            animation-delay: 1s;
+        }
+        @keyframes line4 {
+            0%{transform:translateY(100%);}
+            100%{transform:translateY(-100%);}
+        }
+    </style>
+</head>
+<body>
+    <div class="btn">
+        BUTTON
+        <span class="b1"></span>
+        <span class="b2"></span>
+        <span class="b3"></span>
+        <span class="b4"></span>
+    </div>
+</body>
+</html>

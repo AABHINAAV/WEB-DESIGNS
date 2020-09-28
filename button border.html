@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                background-color:#34495e;
+            }
+            button
+            {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                background:none;
+                outline:none;
+                border:4px solid #0097e6;
+                color:#0097e6;
+                width:230px;
+                height:60px;
+                font-size:20px;
+                border-radius:5px;
+                font-weight:bold;
+            }
+            button::after,button::before
+            {
+                content:"";
+                position:absolute;
+                height:5px;
+                width:16px;
+                background-color:34495e;
+                transform:skewX(45deg);
+                transition:all 0.4s ease;
+            }
+            button::before
+            {
+                left:20%;
+                top:-4px;
+            }
+            button::after
+            {
+                right:20%;
+                bottom:-4px;
+            }
+            button:hover::before
+            {
+                left:80%;
+            }
+            button:hover::after
+            {
+                right:80%;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="btn">HOVER HERE</button>
+    </body>
+</html>

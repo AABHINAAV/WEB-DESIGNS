@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buttons 2</title>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            background:rgb(19, 15, 19);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+        }
+        ul{
+            display: flex;
+        }
+        ul li{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:70px;
+            width: 70px;
+            margin:20px;
+            border-radius:20px;
+            box-shadow:-2px -2px 4px rgba(255,255,255,0.18),
+                        3px 3px 10px rgba(0,0,0,0.9);
+            font-size:2rem;
+            
+        }
+        ul li a ion-icon{
+            color:#555252;
+        }
+        ul li:nth-child(1):hover a ion-icon{
+            color:rgb(255, 0, 242);
+        }
+        ul li:nth-child(2):hover a ion-icon{
+            color:#0f0;
+        }
+        ul li:nth-child(3):hover a ion-icon{
+            color:#00f3ff;
+        }
+        ul li:nth-child(4):hover a ion-icon{
+            color:rgb(255, 251, 0);
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a><ion-icon name="logo-windows"></ion-icon></a></li>
+        <li><a><ion-icon name="logo-xbox"></ion-icon></a></li>
+        <li><a><ion-icon name="logo-twitter"></ion-icon></a></li>
+        <li><a><ion-icon name="logo-tux"></ion-icon></a></li>
+    </ul>
+</body>
+</html>

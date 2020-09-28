@@ -1,0 +1,81 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                margin:0px;
+                padding:0px;
+                background-color: rgb(16, 16, 53);
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                height:100vh;
+            }
+            .a
+            {
+                height:200px;
+                width:200px;  
+                position:relative; 
+            }
+            .b
+            {
+                height:200px;
+                width:200px;  
+                position:relative;   
+                left:-200px;
+                border-top: 10px red solid;          
+                border-radius: 50%;
+                transition:all 10s linear;
+                z-index:-111;
+            }
+            .a::after,.a::before
+            {
+                content:"";
+                height:200px;
+                width:200px;
+                position:absolute;
+                left:-1px;
+                top:-8px;
+                transition:all 10s linear;
+            }
+            .a::after
+            {
+                border-top: 10px rgb(131, 129, 255) solid;         
+                border-radius: 50%;
+                transform:rotate(120deg);
+            }
+            .a::before
+            {
+                border-top: 10px rgba(0, 255, 55, 0.911) solid;         
+                border-radius: 50%;
+                transform:rotate(240deg);
+            }
+            span
+            {
+                color:white;
+                font-size:20px;
+                position:relative;
+                top:80px;
+                left:40px;
+            }
+            .a:hover::after
+            {
+                transform:rotate(3720deg);
+            }
+            .a:hover + .b
+            {
+                transform:rotate(3600deg);
+            }
+            .a:hover::before
+            {
+                transform:rotate(3840deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="a">
+            <span>LOADING...</span>
+        </div>
+        <div class="b"></div>
+    </body>
+</html>

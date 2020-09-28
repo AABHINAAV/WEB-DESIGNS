@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>floating ghost</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body{
+                height:100vh;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+                background:rgb(20, 1, 1);
+            }
+            .container{
+                height:200px;
+                width:200px;
+                background:white;
+                border-radius:100px 100px 0 0;
+                position: relative;
+                animation:animate 1s ease infinite alternate;
+            }
+            .face{
+                position: absolute;
+                left:50%;
+                transform: translate(-50%,0%);
+                height:150px;
+                width:100%;
+            }
+            .eyes{
+                position: absolute;
+                top:30%;
+                width:100%;
+                height:50%;
+                display:flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .eyes span{
+                height:50px;
+                width:50px;
+                background:rgb(20, 1, 1);
+                border-radius:50%;
+                margin:0 1rem;
+                transition: all 0.5s ease;
+            }
+            .container:hover .face .eyes span{
+                height: 30px;
+            }
+            .mouth{
+                position:absolute;
+                top:75%;
+                width:100%;
+                height:50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .mouth span{
+                height:50px;
+                width:120px;
+                background:rgb(20, 1, 1);
+                border-radius:0 0 60px 60px;
+                transition: all 0.5s ease;
+            }
+            .container:hover .face .mouth span{
+                height:30px;
+                width:100px;
+            }
+            .hands{
+                width:200%;
+                height:50px;
+                position:relative;
+                top:50%;
+                left:-50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .hands span{
+                height:40px;
+                width:50px;
+                background:white;              
+            }
+            .hands span:first-child{
+                margin:0 5.5rem 0 0;
+                border-radius:20px 0 0 20px;
+            }
+            .hands span:last-child{
+                margin:0 0 0 5.5rem;
+                border-radius:0 20px 20px 0;
+            }
+            .legs{
+                position:relative;
+                top:70%;
+                width:100%;
+                height:50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .legs span{
+                height:100%;
+                width:50px;
+                background:white;
+                border-radius:0 0 20px 20px;
+            }
+            .legs span:first-child{
+                border-radius:0 0 20px 16px;
+            }
+            .legs span:last-child{
+                border-radius:0 0 16px 20px;
+            }
+            @keyframes animate{
+                50%{
+                    transform: translateY(-30px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="face">
+                <div class="eyes">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="mouth">
+                    <span></span>
+                </div>
+            </div>
+            <div class="hands">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="legs">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </body>
+</html>

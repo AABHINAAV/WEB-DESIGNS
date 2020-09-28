@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                /* background:rgb(13, 13, 46); */
+                background-color: rgb(88, 83, 83);
+                transition:all 0.4s ease;
+            }
+            .xyz
+            {
+                background:rgb(144, 138, 138);
+            }
+            .container
+            {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                color:white;
+                font-size: 40px;
+            }
+            #chk
+            {
+                -webkit-appearance: none;
+                border:none;
+                outline:none;
+                /* background:rgb(71, 71, 173); */
+                background-color: rgb(88, 83, 83);
+                height:50px;
+                width:100px;
+                border-radius:40px;
+                transition:all 0.4s ease;
+                position:relative;
+                margin:10px;
+                top:20px;
+                box-shadow:3px 3px 8px black,
+                           -3px -3px 8px white;
+            }
+            #chk::after
+            {
+                content:"";
+                position:absolute;
+                height:80%;
+                width:40%;
+                border-radius:50%;
+                background:black;
+                top:50%;
+                left:4%;
+                transform:translateY(-50%);
+                transition:all 0.4s ease;
+                box-shadow:2px 2px 4px white;
+            }
+            #chk:checked
+            {
+                background:rgb(32, 28, 28);
+                box-shadow:3px 3px 8px white,
+                           -3px -3px 8px black;
+            }
+            #chk:checked::after
+            {
+                left:55%;
+                background:rgb(226, 211, 211);
+                box-shadow:0 0 40px 5px white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            off<input type="checkbox" id="chk">on
+        </div>
+        <script>
+            document.querySelector("#chk").addEventListener("click",pro);
+            function pro()
+            {
+                document.querySelector("body").classList.toggle("xyz");
+            }
+        </script>
+    </body>
+</html>

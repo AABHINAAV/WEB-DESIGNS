@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drop shadow</title>
+    <style>
+        * {
+            border: none;
+            margin: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background:#6e18f3;
+        }
+        .text ,.box {
+            display: flex;
+        }
+        .text1,
+        .text2 {
+            padding: 1rem 5rem;
+            font-size: 3rem;
+            font-weight: 600;
+            color: white;
+        }
+        .text1{
+            border-radius:20px;
+            box-shadow: -3px -3px 2px rgba(255,255,255,0.3),
+                        5px 5px 5px rgba(0,0,0,0.2),
+                        15px 15px 15px rgba(0,0,0,0.2);
+        }
+        .text2{
+            color:#411288;
+            filter: drop-shadow(-3px -3px 2px rgba(255,255,255,0.3))
+                        drop-shadow(5px 5px 5px rgba(0,0,0,0.2))
+                        drop-shadow(15px 15px 15px rgba(0,0,0,0.2));
+        }
+        .img1{
+            border-radius:20px;
+            box-shadow: -3px -3px 2px rgba(255,255,255,0.3),
+                        5px 5px 5px rgba(0,0,0,0.2),
+                        15px 15px 15px rgba(0,0,0,0.2);
+        }
+        .img2{
+            color:#411288;
+            filter: drop-shadow(-3px -3px 2px rgba(255,255,255,0.3))
+                        drop-shadow(5px 5px 5px rgba(0,0,0,0.2))
+                        drop-shadow(15px 15px 15px rgba(0,0,0,0.2));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="conatiner">
+        <div class="text">
+            <h2 class="text1">box shadow</h2>
+            <h2 class="text2">filter drop shadow</h2>
+        </div>
+        <div class="box">
+            <img src="lock.png" class='img1'>
+            <img src="lock.png" class='img2'>
+        </div>
+    </div>
+</body>
+
+</html>

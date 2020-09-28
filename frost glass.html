@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <style>
+            @font-face
+            {
+            font-family:'lelefont';
+            src:url(HEADPLANE.TTF);
+            }
+            body
+            {
+                padding:0;
+                margin:0;
+                background-image: url('pic.jpg');
+                background-position: center;
+                font-family: 'lelefont';
+                letter-spacing: 7px;
+            }
+            .container
+            {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                color:white;
+                height:70%;
+                width:60%;
+                background:inherit;
+                overflow: hidden;
+                display: flex;
+                justify-content:center;
+                align-items:center;
+            }
+            .container::after
+            {
+                content:'';
+                z-index: -1;
+                position:absolute;
+                top:-10px;
+                right:-10px;
+                bottom:-10px;
+                left:-10px;
+                background:inherit;
+                filter:blur(20px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+                <h1>AKTRON7</h1>
+        </div>
+    </body>
+</html>

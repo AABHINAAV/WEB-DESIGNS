@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEON TUBELIGHTS</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            height:100vh;
+            background:#111;
+        }
+        ul{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            display:flex;
+            width:100%;
+            justify-content: space-evenly;
+        }
+        li{
+            list-style:none;
+            margin:0 30px;
+            height:60vh;
+            width:20px;
+            position:relative;
+            border-radius:20px;
+        }
+        li::before{
+            content:'';
+            position:absolute;
+            top:-12%;
+            left:50%;
+            transform:translateX(-50%);
+            width:80%;
+            height:80px;
+            background:rgb(21, 49, 54);
+            border-radius: 20px;
+        }
+        li::after{
+            content:'';
+            position:absolute;
+            bottom:-12%;
+            left:50%;
+            transform:translateX(-50%);
+            width:80%;
+            height:80px;
+            background:rgb(21, 49, 54);
+            border-radius: 20px;
+        }
+        ul li:nth-child(1){
+            background:#ffd0d0;
+            box-shadow:0 0 80px #f00,0 0 80px #f00,0 0 80px #f00;
+        }
+        ul li:nth-child(2){
+            background:#ffffd7;
+            box-shadow:0 0 80px #ff0,0 0 80px #ff0,0 0 80px #ff0;
+        }
+        ul li:nth-child(3){
+            background:#bffbbf;
+            box-shadow:0 0 80px #0f0,0 0 80px #0f0,0 0 80px #0f0;
+        }
+        ul li:nth-child(4){
+            background:#acffff;
+            box-shadow:0 0 80px #0ff,0 0 80px #0ff,0 0 80px #0ff;
+        }
+        ul li:nth-child(5){
+            background:#ffadff;
+            box-shadow:0 0 80px #f0f,0 0 80px #f0f,0 0 80px #f0f;
+        }
+        ul li:hover{
+            background:#aaa;
+            box-shadow:none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

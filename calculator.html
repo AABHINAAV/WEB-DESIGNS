@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <style>
+            body{
+                padding:0;
+                margin:0;
+                background:rgb(245, 129, 149);
+            }
+            table{
+                position:relative;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+            }
+            [type="button"]{
+                height:50px;
+                width:50px;
+                border-radius:5px;
+                border:none;
+                outline:none;
+                background:rgba(31, 5, 177, 0.8);
+                color:white;
+                font-size:18px;
+                transition:all 0.1s linear;
+            }
+            [type="button"]:hover{
+                filter:hue-rotate(90deg);
+            }
+            #eq{
+                width:236px;
+            }
+            [type="text"]{
+                height:50px;
+                padding:0 5px;
+                font-size:22px;
+                width:236px;
+                border:none;
+                outline: none;
+                border-radius:5px;
+            }
+            input{
+                margin:4px;
+                box-shadow:3px 3px 6px rgb(47, 42, 42),-3px -3px 6px rgb(235, 231, 231);
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="" id="fld">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" value="+" onclick="writen('+')"></td>
+                <td><input type="button" value="-" onclick="writen('-')"></td>
+                <td><input type="button" value="*" onclick="writen('*')"></td>
+                <td><input type="button" value="/" onclick="writen('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="writen(1)"></td>
+                <td><input type="button" value="2" onclick="writen(2)"></td>
+                <td><input type="button" value="3" onclick="writen(3)"></td>
+                <td><input type="button" value="C" onclick="clean()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="writen(4)"></td>
+                <td><input type="button" value="5" onclick="writen(5)"></td>
+                <td><input type="button" value="6" onclick="writen(6)"></td>
+                <td><input type="button" value="DEL" onclick="rmlst()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="writen(7)"></td>
+                <td><input type="button" value="8" onclick="writen(8)"></td>
+                <td><input type="button" value="9" onclick="writen(9)"></td>
+                <td><input type="button" value="." onclick="writen('.')"></td>
+            </tr>
+            <tr>
+                <td colspan="4"><input type="button" value="=" id="eq" onclick="result()"></td>
+            </tr>
+        </table>
+        <script>
+            var x=document.querySelector("#fld");
+            function writen(num){
+                x.value=x.value+num;
+            }
+            function clean(){
+                x.value="";
+            }
+            function rmlst(){
+                
+                x.value=x.value.substr(0,x.value.length-1);
+            }
+            function result(){
+                x.value=eval(x.value);
+            }
+        </script>
+    </body>
+</html>

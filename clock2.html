@@ -1,0 +1,163 @@
+<html>
+
+<head>
+    <script>
+        function clock() {
+            const hours = document.querySelector(".hours")
+            const minutes = document.querySelector(".minutes")
+            const seconds = document.querySelector(".seconds")
+
+            hours.innerHTML = new Date().getHours();
+            minutes.innerHTML = new Date().getMinutes();
+            seconds.innerHTML = new Date().getSeconds();
+
+        }
+        setInterval(clock, 1000);
+        function stop() {
+            var x = new Date().getHours();
+            var y = new Date().getMinutes();
+            var z = new Date().getSeconds();
+            var xxx = document.querySelector('.xyz').innerHTML;
+            document.querySelector('.xyz').innerHTML = xxx + '<br>' + x + ':' + y + ':' + z;
+        }
+        function reset() {
+            document.querySelector('.xyz').innerHTML = '';
+        }
+    </script>
+    <style>
+        @font-face {
+
+            font-family: 'lelefont';
+            src: url(HEADPLANE.TTF);
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: lelefont;
+            height: 100vh;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            background-color: #f4b7ca;
+        }
+
+        .clock {
+            display: flex;
+        }
+
+        .clock div {
+            position: relative;
+            margin: 0 5px;
+            width: 200px;
+            height: 240px;
+        }
+
+        .clock div p {
+            position: relative;
+            display: flex;
+            width: 200px;
+            height: 160px;
+            justify-content: center;
+            align-items: center;
+            background-color: #1a349c;
+            z-index: 1;
+            font-size: 80px;
+            border: none;
+            box-shadow: 0px 34px 45px 0px rgba(0, 0, 0, 0.56);
+            color: white;
+        }
+
+        .clock div p:first-child {
+            border-radius: 20px 20px 0 0;
+        }
+
+        .clock div p:last-child {
+            font-size: 40px;
+            height: 80px;
+            background-color: #ff4a21;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .clock div:last-child p {
+            background-color: #1a349c;
+            color: white;
+        }
+
+        .clock div:last-child p:last-child {
+            background-color: #ff4a21;
+            color: white;
+        }
+
+        .stop {
+            position: absolute;
+            top: 10px;
+            right: 25%;
+            height: 70px;
+            width: 200px;
+            text-align: center;
+            color: white;
+            background: #1a349c;
+            border: none;
+            outline: none;
+            font-size: 34px;
+            font-family: lelefont;
+            border-radius: 16px;
+            box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.56);
+        }
+
+        .reset {
+            position: absolute;
+            top: 10px;
+            right: 10%;
+            height: 70px;
+            width: 160px;
+            color: white;
+            background: #1a349c;
+            border: none;
+            outline: none;
+            font-size: 34px;
+            font-family: lelefont;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0px 20px 45px 0px rgba(0, 0, 0, 0.56);
+        }
+
+        .xyz {
+            position: absolute;
+            top: 120px;
+            right: 25%;
+            font-size: 34px;
+            width: 160px;
+            color: #ba2200;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="stop()" class='stop'>Stoptime</button>
+    <button onclick="reset()" class='reset'>Reset</button>
+    <div class="container">
+        <div class="clock">
+            <div>
+                <p class="hours">00</p>
+                <p>Hours</p>
+            </div>
+            <div>
+                <p class="minutes">00</p>
+                <p>Minutes</p>
+            </div>
+            <div>
+                <p class="seconds">00</p>
+                <p>Seconds</p>
+            </div>
+        </div>
+        <p class="xyz"></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button border3</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing:border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content:center;
+            height:100vh;
+            background:#000;
+        }
+        .btn{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100px;
+            width:100px;
+            position: relative;
+        }
+        .btn a{
+            color:white;
+            font-size:2em;
+            font-weight: bold;
+            transition:all 0.5s linear;
+        }
+        .btn::after, .btn::before{
+            content: "";
+            position:absolute;
+            left:-1px;
+            top:-1px;
+            height:100%;
+            width:100%;
+            transition:all 0.5s linear;
+        }
+        .btn::after{
+            transform:rotateZ(0deg) skew(45deg);
+        }
+        .btn::before{
+            transform:rotateZ(0deg) skew(-45deg);
+        }
+        .btn:hover::after{
+            border-left:2px solid red;
+            border-right:2px solid red;
+            transform:rotateZ(45deg) skew(0deg);
+        }
+        .btn:hover::before{
+            border-top:2px solid red;
+            border-bottom:2px solid red;
+            transform:rotateZ(45deg) skew(0deg);
+        }
+        .btn:hover a{
+            transform:scale(1.5);
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="btn"><a>f</a></div>
+</body>
+</html>

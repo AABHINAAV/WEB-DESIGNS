@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                background:#111820;
+            }
+            h1
+            {
+                color:white;
+                position: absolute;;
+                left:50%;
+                top:30%;
+                transform: translate(-50%,-50%);
+                z-index: 1;
+            }
+            .container
+            {
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                height:400px;
+                width:100%;
+                display:flex;
+                align-items: center;                
+                justify-content: center;
+                border-radius:10px;
+            }
+            .container div
+            {
+                display:inline-block;
+                margin:10px;
+                width:150px;
+                height:180px;
+                color:white;
+                background:#1a85ae;
+                font-size:60px;
+                display:flex;
+                align-items: center;                
+                justify-content: center;
+                -webkit-box-reflect: below 7px linear-gradient(transparent, white);
+            }
+            .container div.sec
+            {
+                background:#fb553c;
+            }
+            .hr::after
+            {
+                content:"HOURS";
+                position:absolute;
+                bottom:110px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:150px;
+                height:30px;
+                font-size:25px;
+                background-color:rgba(0,0,0,0.4);
+            }
+            .min::after
+            {
+                content:"MINUTES";
+                position:absolute;
+                bottom:110px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:150px;
+                height:30px;
+                font-size:25px;
+                background-color:rgba(0,0,0,0.4);
+            }
+            .sec::after
+            {
+                content:"SECONDS";
+                position:absolute;
+                bottom:110px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width:150px;
+                height:30px;
+                font-size:25px;
+                background-color:rgba(0,0,0,0.4);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>IT'S SHOW TIME</h1>
+        <div class="container">
+            
+            <div class="hr"></div>
+            <div class="min"></div>
+            <div class="sec"></div>
+        </div>
+    </body>
+        <script type="text/javascript">
+            setInterval(xyz,1000);
+            function xyz()
+            {
+                var now=new Date();
+                document.querySelector(".hr").innerHTML=now.getHours();
+                document.querySelector(".min").innerHTML=now.getMinutes();
+                document.querySelector(".sec").innerHTML=now.getSeconds();
+            }
+        </script>
+    
+</html>

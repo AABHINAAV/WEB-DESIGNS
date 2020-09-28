@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <style>
+            body
+            {
+                padding:0;
+                margin:0;
+                background-color: rgb(2, 2, 22);
+            }
+            .container
+            {
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                transform-style: preserve-3d;
+            }
+            button
+            {
+                background:rgb(2, 2, 22);
+                outline:none;
+                height:60px;
+                width:160px;
+                border-radius:10px;
+                border:2px solid red;
+                color:white;
+                font-size:20px;
+                transition:all 0.3s ease;
+                z-index:1111;
+            }
+            button::after,button::before
+            {
+                content:"";
+                position:absolute;
+                height:30px;
+                width:30px;
+                border-radius: 50%;
+                background-color:#18dcff;
+                transform:scale(1);
+                transition:all 0.4s ease;
+                z-index:-1;
+                opacity:0;
+            }
+            button::after
+            {
+                right:0px;
+            }
+            button::before
+            {
+                left:0px;
+            }
+            button:hover
+            {
+                transform:scale(0.8);
+                color:black;
+                background:#18dcff;
+                font-weight: bold;
+                box-shadow: 0 0 100px #18dcff;
+                border:2px solid #18dcff;
+            }
+            button:hover::after
+            {
+                transform:translateX(100px) scale(1.35);
+                opacity:1;
+            }
+            button:hover::before
+            {
+                transform:translateX(-100px) scale(1.35);
+                opacity:1;
+            }
+
+            .container::after,.container::before
+            {
+                content:"";
+                position:absolute;
+                height:30px;
+                width:30px;
+                border-radius: 50%;
+                background-color:#18dcff;
+                transform:scale(1);
+                transition:all 0.4s ease;
+                z-index:-1;
+                opacity:0;
+            }
+            .container::after
+            {
+                right:0px;
+            }
+            .container::before
+            {
+                left:0px;
+            }
+            .container:hover::after
+            {
+                transform:translateX(120px) scale(1.35);
+                opacity:1;
+            }
+            .container:hover::before
+            {
+                transform:translateX(-120px) scale(1.35);
+                opacity:1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <button>HOVER ME</button>
+        </div>
+    </body>
+</html>

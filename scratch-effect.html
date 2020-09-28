@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scratch card effect</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            width:100vw;
+            height: 100vh;
+            background:repeating-linear-gradient(0deg,black 0%,black 50%,white 50%,white 100%),
+                       repeating-linear-gradient(90deg,black 0%,black 50%,white 50%,white 100%);
+            background-size:30px 30px;
+            background-blend-mode: difference;
+            overflow: hidden;
+        }
+        span{
+            display: block;
+            position: absolute;
+            height:150px;
+            width:150px;
+            background:url('city1.jpg');
+            background-size:cover;
+            background-attachment: fixed;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('mousemove',(e)=>{
+            const body = document.querySelector('body');
+            const bubble = document.createElement('span');
+            bubble.style.left = e.clientX + 'px';
+            bubble.style.top = e.clientY + 'px';
+            body.appendChild(bubble);
+        });
+    </script>
+</body>
+</html>

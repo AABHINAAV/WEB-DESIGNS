@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>balls</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        body{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            height:100vh;
+            background:linear-gradient(45deg,rgb(0, 47, 255),rgb(214, 31, 61));
+        }
+        .container{
+            height:300px;
+            width:400px;
+            border-bottom:3px #111 solid;
+            display:flex;
+            justify-content:center;
+            align-items:flex-end;
+        }
+        .ball{
+            height:50px;
+            width:50px;
+            border-radius:50%;
+        }
+        .ball1{
+            background:rgb(37, 245, 18);
+            animation:animate 4s infinite linear;
+            animation-delay:0s;
+        }
+        /* .ball2{
+            background:rgb(255, 0, 0);
+            animation:animate 4s infinite ease-in-out;
+            animation-delay:0.25s;
+        }
+        .ball3{
+            background:rgb(56, 196, 251);
+            animation:animate 4s infinite ease-in-out;
+            animation-delay:0.5s;
+        }
+        .ball4{
+            background:rgb(235, 43, 235);
+            animation:animate 4s infinite ease-in-out;
+            animation-delay:0.75s;
+        } */
+        @keyframes animate{
+            0%{
+                transform:translateY(0px) translateX(0px);
+            }
+            25%{
+                transform:translateY(-200px) translateX(312px);
+            }
+            50%{
+                transform:translateY(-424px) translateX(0px);
+            }
+            75%{
+                transform:translateY(-200px) translateX(-310px);
+            }
+            100%{
+                transform:translateY(0px) translate(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball ball1"></div>
+        <!-- <div class="ball ball2"></div>
+        <div class="ball ball3"></div>
+        <div class="ball ball4"></div> -->
+    </div>
+</body>
+</html>
