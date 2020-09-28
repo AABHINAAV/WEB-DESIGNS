@@ -1,0 +1,69 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    color:white;
+    height: 100vh;
+    background:teal;
+}
+h1{
+    text-align:center;
+    margin-bottom:0.5rem;
+}
+main{
+    background:white;
+    height:90vh;
+    width:90%;
+    margin:auto;
+    border:1px black solid;
+    border-radius: 1rem;
+    display:flex;
+    align-items:center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.3),
+                inset -5px -5px 3px rgba(255,255,255,0.1),
+                5px 5px 5px rgba(0,0,0,0.7),
+                -5px -5px 5px rgba(255,255,255,0.4);
+}
+div{
+    width:30%;
+    height:30%;
+    border:1px solid grey;
+    border-radius:1rem;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+.a{
+    background:url('./images/a.jpg');
+}
+.b{
+    background:url('./images/b.jpg');
+}
+.c{
+    background:url('./images/c.jpg');
+}
+.d{
+    background:url('./images/d.jpg');
+}
+.e{
+    background:url('./images/e.jpg');
+}
+.f{
+    background:url('./images/f.jpg');
+}
+.g{
+    background:url('./images/g.jpg');
+}
+.h{
+    background:url('./images/h.jpg');
+}
+.i{
+    background:url('./images/i.jpg');
+}
+.a ,.b ,.c ,.d ,.e ,.f ,.g ,.h ,.i{
+background-size:cover;
+background-repeat: no-repeat;
+}
