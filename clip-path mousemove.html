@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clip path movemove effect</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            background:black;
+        }
+        section{
+            height:100%;
+            width:100%;
+            background-image: url(./city1.jpg);
+            background-size: cover;
+            text-align: center;
+            padding:15rem 5rem;
+            color:white;
+            clip-path: circle(75px at var(--x) var(--y));
+        }
+        section:active{
+            clip-path: circle(200px at var(--x) var(--y));
+            transition:0.2s;
+        }
+        p{
+            font-size:2rem;
+        }
+        div{
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, in repellendus quaerat commodi consectetur quis omnis autem eum dicta qui iusto quibusdam impedit aliquam, quo nostrum inventore illum architecto ipsa nisi ab ea error officiis voluptatibus perferendis! Fuga, sint facere suscipit ducimus harum ipsam cupiditate dolores eligendi neque modi! Doloremque!</div>
+    </section>
+    <script>
+        let sec = document.querySelector('section')
+        sec.addEventListener('mousemove',e=>{
+            sec.style.setProperty('--x',e.clientX + 'px');
+            sec.style.setProperty('--y',e.clientY + 'px');
+        });
+    </script>
+</body>
+</html>

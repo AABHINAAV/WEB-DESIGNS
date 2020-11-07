@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flower loading effect</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:rgb(2, 2, 37);
+        }
+        .wrapper{
+            height: 10rem;
+            width:10rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-box-reflect: below 5px linear-gradient(blue,transparent);
+        }
+        .container{
+            height: 7rem;
+            width:7rem;
+            display: grid;
+            grid-gap: 0.5rem;
+            grid-template-rows: 3rem 3rem;
+            grid-template-columns: 3rem 3rem;
+            animation:loading 4s infinite linear;
+        }
+        @keyframes loading {
+            0%{transform:rotate(0);}
+            100%{transform:rotate(360deg);}
+        }
+        span{
+            animation:size 1.5s infinite linear;
+        }
+        @keyframes size {
+            0%{transform:scale(1);}
+            50%{transform:scale(1.2);}
+            100%{transform:scale(1);}
+        }
+        span:nth-child(1){
+            background:rgb(240, 159, 173);
+            border-radius:50% 50% 0 50%;
+            transform-origin:bottom right;
+        }
+        span:nth-child(2){
+            background:rgb(42, 176, 230);
+            border-radius:50% 50% 50% 0;
+            animation-delay: 0.5s;
+            transform-origin:bottom left;
+        }
+        span:nth-child(3){
+            background:rgb(72, 231, 57);
+            border-radius:50% 0 50% 50%;
+            animation-delay: 1.5s;
+            transform-origin:top right;
+        }
+        span:nth-child(4){
+            background:rgb(245, 226, 56);
+            border-radius: 0 50% 50% 50%;
+            animation-delay: 1s;
+            transform-origin:top left;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

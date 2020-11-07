@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prepetual loading effect</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:#040920;
+        }
+        .container{
+            -webkit-box-reflect: below 1px linear-gradient(transparent,#0001);
+        }
+        .outer{
+            height:16rem;
+            width:16rem;
+            border-radius: 50%;
+            border:20px solid transparent;
+            border-left: 20px solid #06c8f0;
+            border-bottom: 20px solid #06c8f0;
+            transform:rotate(-45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;  
+            animation:outer 4s infinite ease-in-out;           
+        }
+        @keyframes outer {
+            0%{transform:rotate(0deg);}
+            50%{transform:rotate(-90deg);}
+            100%{transform:rotate(0deg);}
+        }
+        .inner{
+            height:calc(100% - 50px);
+            width:calc(100% - 50px);
+            border-radius: 50%;
+            animation: inner 4s infinite ease-in-out;
+            position: relative;
+        }
+        .inner::after{
+            position:absolute;
+            content:'';
+            height: 50px;
+            width:50px;
+            background:whitesmoke;
+            border-radius: 50%;
+        }
+        @keyframes inner {
+            0%{transform:rotate(-20deg);}
+            50%{transform:rotate(-160deg);}
+            100%{transform:rotate(20deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+    </div>
+</body>
+</html>

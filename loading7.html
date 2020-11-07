@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>size loading rotate</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:rgb(2, 2, 37);
+        }
+        .container{
+            height:6rem;
+            width:6rem;
+            transform:rotate(45deg);
+            animation:size 2s infinite linear;
+            position: relative;
+        }
+        span{
+            height: 3rem;
+            width:3rem;
+            position: absolute;
+            animation:rotate 2s infinite linear;
+        }
+        span:nth-child(1){
+            background:rgb(240, 159, 173);
+            top:0;
+            left:0;
+        }
+        span:nth-child(2){
+            background:rgb(42, 176, 230);
+            top:0;
+            right:0;
+        }
+        span:nth-child(3){
+            background:rgb(72, 231, 57);
+            bottom:0;
+            left:0;
+        }
+        span:nth-child(4){
+            background:rgb(245, 226, 56);
+            bottom:0;
+            right:0;
+        }
+        @keyframes size {
+            0%{height:6rem;width:6rem;}
+            50%{height:10rem;width:10rem;}
+            100%{height:6rem;width:6rem;}
+        }
+        @keyframes rotate {
+            0%{transform:rotate(0);}
+            20%{transform:rotate(0);}
+            40%{transform:rotate(0);}
+            60%{transform:rotate(90deg);}
+            80%{transform:rotate(90deg);}
+            100%{transform:rotate(90deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

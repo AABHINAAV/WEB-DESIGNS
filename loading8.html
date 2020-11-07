@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moving balls one after another</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content: center;
+            background:rgb(1, 17, 22);
+        }
+        .container{
+            height:4rem;
+            width:34rem;
+            display:flex;
+            align-items:center;
+            position: relative;
+        }
+        span{
+            position:absolute;
+            height:2rem;
+            width:2rem;
+            border-radius:50%;
+            animation:anim 2s infinite ease-in-out;
+        }
+        span:nth-child(1){
+            background:rgb(212, 76, 99);
+        }
+        span:nth-child(2){
+            background:rgb(68, 241, 62);
+            animation-delay:0.5s;
+        }
+        span:nth-child(3){
+            background:rgb(40, 226, 217);
+            animation-delay:1s;
+        }
+        span:nth-child(4){
+            background:rgb(230, 210, 31);
+            animation-delay:1.5s;
+        }
+        @keyframes anim {
+            0%{transform:translate(0,0);opacity:0;}
+            50%{transform:translate(17rem,0);opacity:1;}
+            100%{transform:translate(34rem,0);opacity:0;}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>
