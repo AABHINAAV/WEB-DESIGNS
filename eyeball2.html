@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eyeball 2</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        body{
+            background:#f58781;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        .container{
+            position:relative;
+        }
+        .ball{
+            position:relative;
+            overflow:hidden;
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            background:white;
+            box-shadow: inset -5px -5px 5px rgba(0,0,0,0.3);
+            animation:bounceball alternate infinite 400ms 40ms ease-in-out;
+        }
+        .iris{
+            position: absolute;
+            width:40%;
+            height:40%;
+            background:#229954;
+            border-radius: 50%;
+            top:30%;
+            left:30%;
+            transform:translateX(0px) translateY(0px) skewX(0deg) skewY(4deg);
+        }
+        .iris::before{
+            content:'';
+            position:absolute;
+            width:35%;
+            height:35%;
+            border-radius: 50%;
+            background:black;
+            left:30%;
+            top:30%;
+        }
+        .iris::after{
+            content:'';
+            position: absolute;
+            width: 15px;
+            height:15px;
+            background-color:rgba(255,255,255,0.43);
+            border-radius: 50%;
+            left:20%;
+            top:22%;
+        }
+        .shadow{
+            position:absolute;
+            width:160px;
+            height:160px;
+            border-radius: 50%;
+            background:rgba(0,0,0,0.09);
+            top:190px;
+            left:14px;
+            animation:bounceball alternate infinite 400ms 40ms ease-in-out
+        }
+        /* @keyframes bounceball {
+            to{transform:scaleX(1.03) scaleY(0.97)}   
+        } */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ball">
+            <div class="iris"></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+    <script>
+        let body=document.querySelector('body');
+        body.addEventListener('mousemove',(e)=>{
+            let midwidth = body.clientWidth / 2;
+            let midheight = body.clientHeight / 2;
+            let mouseX = e.pageX;
+            let mouseY = e.pageY;
+            let transX = mouseX - midwidth;
+            let transY = mouseY - midheight;
+            if(transX>=40) transX=40;
+            else if(transX<=-40) transX=-40;
+            if(transY>=40) transY=40;
+            else if(transY<=-40) transY=-40;
+            if(transX > 36 && transY > 36){
+                transX = 36;
+                transY = 36;
+            }
+            if(transX < -36 && transY < -36){
+                transX = -36;
+                transY = -36;
+            }
+            if(transX > 36 && transY < -36){
+                transX = 36;
+                transY = -36;
+            }
+            if(transX < -36 && transY > 36){
+                transX = -36;
+                transY = 36;
+            }
+            document.querySelector('.iris').style.transform=`translate(${transX}px,${transY}px)`;
+        });
+    </script>
+</body>
+</html>
